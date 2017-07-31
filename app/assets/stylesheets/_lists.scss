@@ -1,0 +1,44 @@
+.main__content{
+  height: 100%;
+  margin-top: 30px;
+}
+
+.new__list{
+  text-align: center;
+  &--input{
+    width: 70%;
+    display: inline-block;
+    text-align: left;
+    &--label{
+    }
+    &--name{
+      width: 80%;
+      height: 30px;
+    }
+  }
+}
+
+.todo__list{
+  margin-top: 30px;
+  text-align: center;
+  .lists{
+    margin: auto;
+    width: 70%;
+    display: inline-block;
+    .list{
+      &--detail{
+        border: 1px silver solid;
+        text-align: left;
+        padding-bottom: 30px;
+        &__name{
+          margin: 20px 0 0 20px;
+          font-size: 20px;
+        }
+        &__todo{
+          margin-left: 20px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
