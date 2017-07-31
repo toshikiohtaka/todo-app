@@ -1,21 +1,35 @@
 <div class='main__content'>
-  <form class='new__list' id='new_list_form'>
-    <div class='new__list--input'>
-      <label class='new__list--input--label'>
-        新しいリストを作成する。<br>
-        <input type='text' class='new__list--input--name'>
-      </label>
-      <input type='submit' value='作成する' id='input_box' >
+  <%= form_for @list do |f| %>
+    <div class='new_list--input'>
+      <%= f.label :name, '新しいリストを作成する', class: 'new_list--input--label' %><br>
+        <%= f.text_field :name, class: 'new_list--input--name', placeholder: 'リスト名を入力してください' %>
+      <%= f.submit '作成する', id: 'input_box' %>
     </div>
-  </form>
+  <% end %>
+  <% if @list.errors.any? %>
+    <ul class='error_messages_lists'>
+      <% @list.errors.full_messages.each do |err| %>
+        <li class='error_message_list'>
+          <p class='error_message'><%= err %></p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
   <div class='todo__list'>
     <ul class='lists'>
-      <li class='list'>
-        <div class='list--detail'>
-          <p class='list--detail__name'><a href='#'>レポート課題</a></p>
-          <p class='list--detail__todo'>todoがありません</p>
-        </div>
-      </li>
+      <% if @lists %>
+        <% @lists.each do |list| %>
+          <li class='list'>
+            <div class='list--detail'>
+              <p class='list--detail__name'>
+                <%= link_to "#{ list.name }", list_path(list), class: 'list--detail__name__path' %>
+              </p>
+              <p class='list--detail__todo'>todoがありません</p>
+            </div>
+          </li>
+        <% end %>
+      <% else %>
+      <% end %>
     </ul>
   </div>
 </div>

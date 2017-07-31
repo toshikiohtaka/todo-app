@@ -3,7 +3,7 @@
   margin-top: 30px;
 }
 
-.new__list{
+.new_list{
   text-align: center;
   &--input{
     width: 70%;
@@ -19,13 +19,13 @@
 }
 
 .todo__list{
-  margin-top: 30px;
   text-align: center;
   .lists{
     margin: auto;
     width: 70%;
     display: inline-block;
     .list{
+      margin-top: 30px;
       &--detail{
         border: 1px silver solid;
         text-align: left;
@@ -33,6 +33,9 @@
         &__name{
           margin: 20px 0 0 20px;
           font-size: 20px;
+          &__path{
+            text-decoration: none;
+          }
         }
         &__todo{
           margin-left: 20px;
