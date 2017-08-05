@@ -1,0 +1,11 @@
+.error_messages_lists{
+  list-style: none;
+  text-align: left;
+  .error_message_list{
+    display: inline-block;
+    text-align: left;
+    .error_message{
+      color: red;
+    }
+  }
+}

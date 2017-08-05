@@ -1,0 +1,11 @@
+@mixin media_query{
+  @media (max-width:696px){
+    @content;
+  }
+}
+
+@mixin media_sm{
+  @media (max-width:428px){
+    @content;
+  }
+}

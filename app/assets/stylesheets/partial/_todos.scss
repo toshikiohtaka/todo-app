@@ -1,0 +1,115 @@
+.main{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.todo__detail{
+  width: 70%;
+  display: inline-block;
+  text-align: left;
+  margin-top: 30px;
+  &__name{
+    font-size: 25px;
+  }
+  .new_todo{
+    border: 1px silver solid;
+    #form__description{
+      margin: 30px 0 20px 8%;
+    }
+    &__detail--form{
+      margin-left: 8%;
+      margin-right: 8%;
+      &__input{
+        margin-bottom: 20px;
+        &__label{
+          margin-right: 10px;
+          width: 70px;
+          float: left;
+        }
+        &__text{
+          width: 70%;
+        }
+        #submit_button{
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.todo__contents{
+  border: 1px silver solid;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 30px;
+  #todo_content_name{
+    margin: 30px 0 20px 8%;
+  }
+  .todo__lists{
+    margin-left: 8%;
+    width: 40%;
+    display: inline-block;
+    &__limit{
+      margin-bottom: 20px;
+      &--label{
+        float: left;
+      }
+      &--content{
+        float: left;
+        margin-left: 3em;
+        @include media_query {
+          margin-left: 0px;
+        }
+      }
+    }
+    &__created{
+      margin-bottom: 20px;
+      &--label{
+        float: left;
+      }
+      &--content{
+        float: left;
+        margin-left: 2em;
+        @include media_query{
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+  .state_button{
+    border: 1px silver solid;
+    width: 20%;
+    height: 68px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20%;
+    background-color: red;
+    @include media_sm{
+      height: 116px;
+      writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+      -webkit-writing-mode:vertical-rl;
+    }
+    #state{
+      font-size: 20px;
+      text-align: center;
+      line-height: 68px;
+    }
+  }
+}
+
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.no_todo_list{
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+  color: red;
+  font-size: 20px;
+  margin-top: 10px;
+}
