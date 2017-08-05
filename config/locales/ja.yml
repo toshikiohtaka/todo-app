@@ -1,5 +1,6 @@
 ja:
   attributes:
+    limit: 期限
     name: 名前
     email: メールアドレス
     password: パスワード
@@ -39,7 +40,7 @@ ja:
     - 土曜日
     formats:
       default: ! '%Y/%m/%d'
-      long: ! '%Y年%m月%d日(%a)'
+      long: ! '%Y年%m月%d日'
       short: ! '%m/%d'
     month_names:
     -
@@ -196,6 +197,6 @@ ja:
     am: 午前
     formats:
       default: ! '%Y/%m/%d %H:%M:%S'
-      long: ! '%Y年%m月%d日(%a) %H時%M分%S秒 %z'
+      long: ! '%Y年%-m月%-d日'
       short: ! '%y/%m/%d %H:%M'
     pm: 午後

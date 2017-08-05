@@ -10,12 +10,13 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     if @list.save
       redirect_to root_path
+      flash[:notice] = '新しいTodoリスト作成されました'
     else
       render :index
     end
   end
 
-  def show
+  def search
   end
 
   private
