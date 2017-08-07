@@ -16,9 +16,6 @@ class ListsController < ApplicationController
     end
   end
 
-  def search
-  end
-
   private
 
   def list_params

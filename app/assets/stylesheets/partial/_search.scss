@@ -1,0 +1,153 @@
+.search__field{
+  height: 5%;
+  width: 100%;
+  margin-top: 30px;
+  .search__box{
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+    &--text{
+      height: 100%;
+      width: 80%;
+    }
+    &--submit{
+      font-size: 17px;
+      margin-left: 20px;
+      height: calc(100% + 4px);
+      width: 10%;
+    }
+  }
+}
+
+.result__field{
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+  .result__todos{
+    width: 70%;
+    display: inline-block;
+    &__element{
+      width: calc(80% + 2px);
+      border: 1px silver solid;
+      margin-bottom: 20px;
+      text-align: left;
+      padding-bottom: 10px;
+      &--name{
+        margin: 20px 0 0 20px;
+        &--link{
+          font-size: 20px;
+          text-decoration: none;
+        }
+      }
+      &--box{
+        margin-top: 20px;
+        &--list{
+          width: 50%;
+          float: left;
+          margin: 20px 0 0 20px;
+          position: relative;
+          bottom: 10px;
+          &--label{
+            float: left;
+          }
+          &--content{
+            float: left;
+            margin-left: 1em;
+          }
+        }
+        &--date{
+          margin-left: 20px;
+          float: left;
+          position: relative;
+          bottom: 10px;
+          &--limit{
+            &--label{
+              float: left;
+            }
+            &--content{
+              float: left;
+              margin-left: 2em;
+            }
+          }
+          &--created{
+            &--label{
+              float: left;
+            }
+            &--content{
+              float: left;
+              margin-left: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+  .result__lists{
+    width: 70%;
+    display: inline-block;
+    &__element{
+      width: calc(80% + 2px);
+      border: 1px silver solid;
+      margin-bottom: 20px;
+      text-align: left;
+      padding-bottom: 10px;
+      &--name{
+        margin: 20px 0 0 20px;
+        &--link{
+          font-size: 20px;
+          text-decoration: none;
+        }
+      }
+      &--box{
+        margin-top: 20px;
+        &--list{
+          width: 50%;
+          float: left;
+          margin: 20px 0 0 20px;
+          position: relative;
+          bottom: 10px;
+          &--label{
+            float: left;
+          }
+          &--content{
+            float: left;
+            margin-left: 1em;
+          }
+        }
+        &--date{
+          margin-left: 20px;
+          float: left;
+          position: relative;
+          bottom: 10px;
+          &--limit{
+            &--label{
+              float: left;
+            }
+            &--content{
+              float: left;
+              margin-left: 2em;
+            }
+          }
+          &--created{
+            &--label{
+              float: left;
+            }
+            &--content{
+              float: left;
+              margin-left: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.notice__todo__result{
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+  color: red;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
