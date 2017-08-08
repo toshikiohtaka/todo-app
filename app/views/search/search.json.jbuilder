@@ -2,7 +2,7 @@ json.todo do |json|
   json.array!(@todo_results) do |todo|
     json.id          todo.id
     json.body        todo.body
-    json.limit       todo.limit
+    json.limit       todo.limit.strftime("%Y年%-m月%-d日")
     json.list_id     todo.list_id
     json.list_name   todo.list.name
     json.created_at  todo.created_at.strftime("%Y年%-m月%-d日")

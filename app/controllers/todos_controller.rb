@@ -15,10 +15,19 @@ class TodosController < ApplicationController
     end
   end
 
+  def update
+    @todo = Todo.find(params[:id])
+    if params[:state] == "1"
+      @todo.update(state: 2)
+    else
+      @todo.update(state: 1)
+    end
+  end
+
   private
 
   def todo_params
-    params.require(:todo).permit(:body, :limit).merge(list_id: params[:list_id])
+    params.require(:todo).permit(:body, :limit, :state).merge(list_id: params[:list_id])
   end
 
   def set_list

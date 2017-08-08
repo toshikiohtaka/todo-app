@@ -1,0 +1,10 @@
+<% lists.each do |list| %>
+  <li class='list'>
+    <div class='list--detail'>
+      <p class='list--detail__name'>
+        <%= link_to "#{ list.name }", list_todos_path(list), class: 'list--detail__name__path' %>
+      </p>
+      <p class='list--detail__todo'>todoがありません</p>
+    </div>
+  </li>
+<% end %>

@@ -1,0 +1,24 @@
+<% todos.each do |todo| %>
+  <div class='todo__contents clearfix' id='todo__<%= todo.id %>' data-id=<%= todo.id %>>
+    <p id='todo_content_name'><%= todo.body %></p>
+    <ul class='todo__lists'>
+      <li class='todo__lists__limit clearfix'>
+        <p class='todo__lists__limit--label'>期限:</p>
+        <p class='todo__lists__limit--content'><%= l todo.limit, format: :long %></p>
+      </li>
+      <li class='todo__lists__created clearfix'>
+        <p class='todo__lists__created--label'>作成日:</p>
+        <p class='todo__lists__created--content'><%= l todo.created_at, format: :long %></p>
+      </li>
+    </ul>
+    <% if todo.state == 1 %>
+      <div id='button--<%= todo.id %>' class='no__complete__button state__button' data-state=<%= todo.state %>>
+        <p id='state'>未完了</p>
+      </div>
+    <% else %>
+      <div id='button--<%= todo.id %>' class='complete__button state__button' data-state=<%= todo.state %>>
+        <p id='state'>完了</p>
+      </div>
+    <% end %>
+  </div>
+<% end %>

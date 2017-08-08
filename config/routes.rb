@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get '/search_field' => 'search#index'
   get '/search' => 'search#search'
   resources :lists, only: [:index, :create] do
-    resources :todos, only: [:index, :create]
+    resources :todos, only: [:index, :create, :update]
   end
 end

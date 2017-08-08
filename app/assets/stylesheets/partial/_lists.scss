@@ -13,7 +13,7 @@ main{
 .new_list{
   text-align: center;
   &--input{
-    width: 70%;
+    width: 100%;
     display: inline-block;
     text-align: left;
     &--name{
@@ -27,7 +27,7 @@ main{
   text-align: center;
   .lists{
     margin: auto;
-    width: 70%;
+    width: 100%;
     display: inline-block;
     .list{
       margin-top: 30px;

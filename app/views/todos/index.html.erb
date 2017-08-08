@@ -1,49 +1,27 @@
 <div class='main'>
-  <div class='todo__detail'>
+  <div class='todo__detail' data-list-id=<%= @list.id %>>
     <h1 class='todo__detail__name'><%= @list.name %></h1>
     <%= form_for [@list,@todo] do |f| %>
       <p id='form__description'>新しいTodoを作成する</p>
       <ul class='new_todo__detail--form'>
         <li class='new_todo__detail--form__input'>
           <%= f.label :body, 'Todo名', class: 'new_todo__detail--form__input__label' %>
-          <%= f.text_field :body, class: 'new_todo__detail--form__input__text', placeholder: 'TODO名を入力してください' %>
+          <%= f.text_field :body, class: 'new_todo__detail--form__input__text', placeholder: 'Todo名を入力してください' %>
         </li>
         <li class='new_todo__detail--form__input'>
           <%= f.label :limit, '期限', class: 'new_todo__detail--form__input__label' %>
-          <%= f.text_field :limit, class: 'new_todo__detail--form__input__text', placeholder: '期限を入力してください' %>
+          <%= f.text_field :limit, class: 'new_todo__detail--form__input__text', placeholder: '例) 2017年8月10日 => 2017-08-09 or 20170809' %>
+          <%= f.hidden_field :state, value: 1 %>
           <%= f.submit 'Todoの追加', id: 'submit_button' %>
         </li>
       </ul>
     <% end %>
     <% if @todo.errors.any? %>
-      <ul class='error_messages_lists'>
-        <% @todo.errors.full_messages.each do |err| %>
-          <li class='error_message_list'>
-            <p class='error_message'><%= err %></p>
-          </li>
-        <% end %>
-      </ul>
+      <%= render 'common/error', notice: @todo %>
     <% end %>
   </div>
   <% if @todos.exists? %>
-    <% @todos.each do |todo| %>
-      <div class='todo__contents clearfix'>
-        <p id='todo_content_name'><%= todo.body %></p>
-        <ul class='todo__lists'>
-          <li class='todo__lists__limit clearfix'>
-            <p class='todo__lists__limit--label'>期限:</p>
-            <p class='todo__lists__limit--content'><%= todo.limit %></p>
-          </li>
-          <li class='todo__lists__created clearfix'>
-            <p class='todo__lists__created--label'>作成日:</p>
-            <p class='todo__lists__created--content'><%= l todo.created_at, format: :long %></p>
-          </li>
-        </ul>
-        <div class='state_button'>
-          <p id='state'>未完了</p>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'todo', todos: @todos %>
   <% else %>
     <div class='no_todo_list'>
       登録されたTodoはございません。

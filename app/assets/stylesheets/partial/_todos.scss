@@ -77,7 +77,7 @@
       }
     }
   }
-  .state_button{
+  .no__complete__button{
     border: 1px silver solid;
     width: 20%;
     height: 68px;
@@ -91,10 +91,20 @@
       -ms-writing-mode: tb-rl;
       -webkit-writing-mode:vertical-rl;
     }
-    #state{
-      font-size: 20px;
-      text-align: center;
-      line-height: 68px;
+  }
+  .complete__button{
+    border: 1px silver solid;
+    width: 20%;
+    height: 68px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20%;
+    background-color: blue;
+    @include media_sm{
+      height: 116px;
+      writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+      -webkit-writing-mode:vertical-rl;
     }
   }
 }
@@ -112,4 +122,11 @@
   color: red;
   font-size: 20px;
   margin-top: 10px;
+}
+
+#state{
+  font-size: 20px;
+  text-align: center;
+  line-height: 68px;
+  cursor: default;
 }

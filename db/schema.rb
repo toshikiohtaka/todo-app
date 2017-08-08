@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170730101354) do
+ActiveRecord::Schema.define(version: 20170807155343) do
 
   create_table "lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -21,10 +21,11 @@ ActiveRecord::Schema.define(version: 20170730101354) do
 
   create_table "todos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "body",       limit: 65535, null: false
-    t.string   "limit",                    null: false
+    t.date     "limit",                    null: false
     t.integer  "list_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "state"
     t.index ["list_id"], name: "index_todos_on_list_id", using: :btree
   end
 
